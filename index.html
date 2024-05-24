@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego del Ahorcado. Carrasquel y Castillo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header><h1>JUEGO DEL AHORCADO</h1></header>
+    <h4 class="puntaje-texto">
+        Puntaje:
+        <b>0</b>
+    </h4>
+
+    <div class="cuadro-finjuego">
+        <div class="contenido">
+            <h4>¡Fin de Juego!</h4>
+            <p>La palabra correcta es: <b>sistema</b></p>
+            <button class="reinicio">Intentalo de nuevo</button>
+        </div>
+    </div>
+    
+    <div class="contenedor">
+        <div class="caja-horca">
+            <img src="imagenesdeapoyo/hangman-0.svg" alt="imagen-horca">
+        </div>
+        <div class="caja-juego">
+            <ul class="display-palabras"></ul>
+            <h4 class="texto-pista">
+                Pista:
+                <b>Otorrinolaringologia</b>
+            </h4>
+            <h4 class="texto-intentos">
+                Intentos Fallidos:
+                <b>0 / 6</b>
+            </h4>
+            <div class="teclado"></div>
+        </div>
+    </div>
+    <script src="scripts/listapalabras.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

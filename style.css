@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Cabin Sketch", sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.contenedor{
+    width: 850px;
+    display: flex;
+    gap: 70px;
+    align-items: flex-end;
+    padding: 60px 40px;
+    border-radius: 10px;
+}
+
+.caja-horca img{
+    max-width: 270px;
+}
+
+.display-palabras{
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.display-palabras .letra{
+    width: 28px;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    border-bottom: 3px solid #000;
+}
+
+.display-palabras .letra.adivinada {
+    border-color: transparent;
+    margin: -40px 0 35px;
+}
+
+.caja-juego h4{
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.caja-juego h4 b{
+    font-weight: 600;
+}
+
+.caja-juego .teclado{
+    display: flex;
+    gap: 5px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+:where(.cuadro-finjuego, .teclado) button{
+    font-size: 1rem;
+    font-size: 600;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.teclado button{
+    padding: 7px;
+    width: calc(100% / 9 - 5px);
+}
+
+.teclado button[disabled]{
+    color: transparent;
+    background: transparent;
+    pointer-events: none;
+}
+
+.cuadro-finjuego{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    padding: 0 10px;
+    pointer-events: none;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    transition: opacity 0.3 ease;
+}
+
+.cuadro-finjuego.show{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.cuadro-finjuego .contenido{
+    background: #fff;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.cuadro-finjuego h4{
+    font-size: 1.53rem;
+}
+
+.cuadro-finjuego p{
+    font-size: 1.15rem;
+    margin: 15px 0 30px;
+    font-weight: 500;
+}
+
+.cuadro-finjuego p b{
+    color: #5e63ba;
+    font-weight: 600;
+}
+
+.cuadro-finjuego button{
+    padding: 12px 23px;
+
+}
+
+@media (max-width: 782px){
+    .contenedor{
+        flex-direction: column;
+        padding: 30px 15px;
+        align-items: center;
+    }
+
+    .caja-horca img{
+        max-width: 200px;
+    }
+
+    .caja-horca h1{
+       display: none; 
+    }
+}
