@@ -4,19 +4,29 @@ const textoIntentos = document.querySelector(".texto-intentos b");
 const tecladoDiv = document.querySelector(".teclado");
 const cuadrofinJuego = document.querySelector(".cuadro-finjuego");
 const jugardeNuevo = document.querySelector(".cuadro-finjuego");
+const textoPuntaje = document.querySelector(".puntaje-texto b");
+let rondasGanadas = parseInt(localStorage.getItem('rondasGanadas')) || 0;
 
-let palabraActual, letrasCorrectas, intentosFallidosContador;
+const mostrarRondasGanadas = () => {
+  document.querySelector(".rondas-ganadas").innerText = rondasGanadas;
+}
+
+mostrarRondasGanadas();
+
+let palabraActual, letrasCorrectas, intentosFallidosContador, puntajeContador;
 const maxIntentos = 6;
 
 const resetearJuego = () => {
   //Resetea el juego, sus variables, y los elementos visuales
   letrasCorrectas = [];
   intentosFallidosContador = 0;
+  puntajeContador = 0;
   imagenHorca.src = `imagenesdeapoyo/hangman-${intentosFallidosContador}.svg`;
   textoIntentos.innerText = `${intentosFallidosContador} / ${maxIntentos}`;
   tecladoDiv.querySelectorAll("button").forEach(btn => btn.disabled = false);
   displayPalabras.innerHTML = palabraActual.split("").map(() => `<li class="letra"></li>`).join("");
   cuadrofinJuego.classList.remove("show");
+  textoPuntaje.innerText = `${puntajeContador}`;
 }
 
 const obtenPalabraCualquiera = () => {
@@ -33,7 +43,13 @@ const findeJuego = (victoria) => {
     const cajaTexto = victoria ? `Adivinaste la palabra: ` : `La palabra correcta es: `;
     cuadrofinJuego.querySelector("h4").innerText = `${victoria ? `¡Ganaste!` : `¡Perdiste`}`;
     cuadrofinJuego.querySelector("p").innerHTML = `${cajaTexto} <b>${palabraActual}</b>`;
+    cuadrofinJuego.querySelector(".puntaje-final").innerText = `${puntajeContador}`;
     cuadrofinJuego.classList.add("show");
+    if (victoria) {
+      rondasGanadas++;
+      localStorage.setItem('rondasGanadas', rondasGanadas);
+      mostrarRondasGanadas();
+    }
   }, 300);
 }
 
@@ -46,6 +62,7 @@ const iniciarJuego = (button, letraClickeada) => {
         letrasCorrectas.push(letra);
         displayPalabras.querySelectorAll("li")[index].innerText = letra;
         displayPalabras.querySelectorAll("li")[index].classList.add("adivinada");
+        puntajeContador = puntajeContador + 50;
       }
     });
   }else{
@@ -53,6 +70,7 @@ const iniciarJuego = (button, letraClickeada) => {
     intentosFallidosContador++;
     imagenHorca.src = `imagenesdeapoyo/hangman-${intentosFallidosContador}.svg`;
   }
+  textoPuntaje.innerText = `${puntajeContador}`;
   button.disabled = true;
   textoIntentos.innerText = `${intentosFallidosContador} / ${maxIntentos}`;
 
