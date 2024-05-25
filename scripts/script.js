@@ -13,6 +13,12 @@ const mostrarRondasGanadas = () => {
 
 mostrarRondasGanadas();
 
+document.querySelector(".reset-rondas").addEventListener("click", () => {
+  rondasGanadas = 0;
+  localStorage.setItem('rondasGanadas', rondasGanadas);
+  mostrarRondasGanadas();
+});
+
 let palabraActual, letrasCorrectas, intentosFallidosContador, puntajeContador;
 const maxIntentos = 6;
 
