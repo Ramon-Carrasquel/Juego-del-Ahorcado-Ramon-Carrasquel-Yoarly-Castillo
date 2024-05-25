@@ -7,8 +7,6 @@ const jugardeNuevo = document.querySelector(".cuadro-finjuego");
 const textoPuntaje = document.querySelector(".puntaje-texto b");
 let rondasGanadas = parseInt(localStorage.getItem('rondasGanadas')) || 0;
 
-
-let palabraActual, letrasCorrectas, intentosFallidosContador;
 const mostrarRondasGanadas = () => {
   document.querySelector(".rondas-ganadas").innerText = rondasGanadas;
 }
@@ -71,8 +69,9 @@ const iniciarJuego = (button, letraClickeada) => {
     //Si la letra elegida no esta en la palabra, se actualiza el contador de intentos y la imagen de la horca
     intentosFallidosContador++;
     imagenHorca.src = `imagenesdeapoyo/hangman-${intentosFallidosContador}.svg`;
-    textoPuntaje.innerText = `${puntajeContador}`;
+    
   }
+  textoPuntaje.innerText = `${puntajeContador}`;
   button.disabled = true;
   textoIntentos.innerText = `${intentosFallidosContador} / ${maxIntentos}`;
 
