@@ -4,14 +4,40 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Cabin Sketch", sans-serif;
+    
+}
+    
+h1{
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translateX(50%),translateY(50%);
 }
 
+.puntaje-texto {
+
+    text-align: center;
+    position: absolute;
+    left: 60%;
+    top: 20%;
+    transform: translateX(50%),translateY(50%);
+
+
+}
+ 
+
 body{
+    
+    
     display: flex;
     align-items: center;
     padding: 0 10px;
     justify-content: center;
+    background-image: url(Cuaderno.jpeg);
+    background-size: cover;
     min-height: 100vh;
+    
 }
 
 .contenedor{
@@ -141,7 +167,7 @@ body{
     margin: 15px 0 30px;
 }
 
-@media (max-width: 782px){
+@media (max-width: 790px){
     .contenedor{
         flex-direction: column;
         padding: 30px 15px;
@@ -155,8 +181,24 @@ body{
     .caja-horca h1{
        display: none; 
     }
+    .puntaje-texto {
+        text-align: center;
+        position: absolute;
+        left: 45%;
+        top: 10%;
+        transform: translateX(50%),translateY(50%);
+        
 
-    .cuadro-finjuego button {
-        margin: 0 5px 5px;
+        
+    }
+
+    h1{
+        text-align: center;
+        position: absolute;
+        left: 25%;
+        top: 5%;
+        transform: translateX(50%),translateY(50%);
+        flex-direction: row;
+       
     }
 }
