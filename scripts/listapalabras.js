@@ -1,7 +1,7 @@
 const listaPalabras = [
     {
         palabra: "colegio",
-        pista: "Institucion para niños"
+        pista: "Institución para niños"
     },
     {
         palabra: "sistema",
@@ -17,7 +17,7 @@ const listaPalabras = [
     },
     {
         palabra: "modelo",
-        pista: "abstraccion del mundo real"
+        pista: "abstracción del mundo real"
     },
     {
         palabra: "uml",

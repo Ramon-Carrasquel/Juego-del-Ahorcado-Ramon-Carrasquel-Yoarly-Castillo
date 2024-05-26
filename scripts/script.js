@@ -4,16 +4,8 @@ const textoIntentos = document.querySelector(".texto-intentos b");
 const tecladoDiv = document.querySelector(".teclado");
 const cuadrofinJuego = document.querySelector(".cuadro-finjuego");
 const jugardeNuevo = document.querySelector(".cuadro-finjuego");
-const textoPuntaje = document.querySelector(".puntaje-texto b");
-let rondasGanadas = parseInt(localStorage.getItem('rondasGanadas')) || 0;
 
-const mostrarRondasGanadas = () => {
-  document.querySelector(".rondas-ganadas").innerText = rondasGanadas;
-}
-
-mostrarRondasGanadas();
-
-let palabraActual, letrasCorrectas, intentosFallidosContador, puntajeContador;
+let palabraActual, letrasCorrectas, intentosFallidosContador;
 const maxIntentos = 6;
 
 const resetearJuego = () => {

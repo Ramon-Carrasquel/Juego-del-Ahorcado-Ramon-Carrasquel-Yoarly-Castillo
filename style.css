@@ -164,7 +164,7 @@ body{
 
 .cuadro-finjuego button{
     padding: 12px 23px;
-
+    margin: 15px 0 30px;
 }
 
 @media (max-width: 790px){
@@ -180,26 +180,5 @@ body{
 
     .caja-horca h1{
        display: none; 
-    }
-
-    .puntaje-texto {
-        text-align: center;
-        position: absolute;
-        left: 45%;
-        top: 10%;
-        transform: translateX(50%),translateY(50%);
-        
-
-        
-    }
-
-    h1{
-        text-align: center;
-        position: absolute;
-        left: 25%;
-        top: 5%;
-        transform: translateX(50%),translateY(50%);
-        flex-direction: row;
-       
     }
 }
